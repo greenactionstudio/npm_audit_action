@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: npm audit action step
-        uses: ./
+        uses: liorfrank/npm_audit_action@1.0.1
         with:
           severity: 'high'
           title: 'Injection'

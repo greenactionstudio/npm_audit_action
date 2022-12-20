@@ -24,7 +24,7 @@ async function run() {
             }
         }
         console.log("Here is the full npm audit report:")
-        console.dir(auditJson);
+        console.log(`stdout: ${auditResult.stdout}`);
     }
 
     catch (error) {
