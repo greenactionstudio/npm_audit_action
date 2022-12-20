@@ -1,4 +1,4 @@
-name: 'npm audit action'
+name: 'npm audit with custom severity / title'
 description: 'Runs npm audit'
 inputs:
   severity:
