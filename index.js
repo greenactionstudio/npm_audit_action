@@ -23,6 +23,7 @@ async function run() {
                     auditJson.vulnerabilities[vulnerability].via[0].hasOwnProperty('title') &&
                     auditJson.vulnerabilities[vulnerability].via[0].title.includes(forbiddenString)) {
                     core.setFailed(`Found vulnerability with "${forbiddenString}" in the title`);
+                    break;
                 }
             }
         }
