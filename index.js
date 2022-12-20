@@ -18,7 +18,10 @@ async function run() {
         const forbiddenString = core.getInput('title');
         if (forbiddenString !== '') {
             for (const vulnerability in auditJson.vulnerabilities) {
-                if (auditJson.vulnerabilities[vulnerability].via[0].title.includes(forbiddenString)) {
+                if (auditJson.vulnerabilities[vulnerability].via &&
+                    auditJson.vulnerabilities[vulnerability].via[0] &&
+                    auditJson.vulnerabilities[vulnerability].via[0].hasOwnProperty('title') &&
+                    auditJson.vulnerabilities[vulnerability].via[0].title.includes(forbiddenString)) {
                     core.setFailed(`Found vulnerability with "${forbiddenString}" in the title`);
                 }
             }
